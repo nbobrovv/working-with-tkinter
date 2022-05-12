@@ -1,6 +1,8 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 
+from tkinter import *
+
 """
 напишите простейший калькулятор, состоящий из двух текстовых полей,
 куда пользователь вводит числа, и четырех кнопок "+", "-", "*", "/". Результат вычисления
@@ -9,41 +11,39 @@
 "ошибка".
 """
 
-from tkinter import *
-
 
 def add(event):
     try:
-        num1 = float(ent1.get())
-        num2 = float(ent2.get())
-        l1['text'] = num1+num2
+        digit1 = float(ent1.get())
+        digit2 = float(ent2.get())
+        l1['text'] = digit1 + digit2
     except ValueError:
         l1['text'] = 'Ошибка'
 
 
 def sub(event):
     try:
-        num1 = float(ent1.get())
-        num2 = float(ent2.get())
-        l1['text'] = num1-num2
+        digit1 = float(ent1.get())
+        digit2 = float(ent2.get())
+        l1['text'] = digit1 - digit2
     except ValueError:
         l1['text'] = 'Ошибка'
 
 
 def mul(event):
     try:
-        num1 = float(ent1.get())
-        num2 = float(ent2.get())
-        l1['text'] = num1*num2
+        digit1 = float(ent1.get())
+        digit2 = float(ent2.get())
+        l1['text'] = digit1 * digit2
     except ValueError:
         l1['text'] = 'Ошибка'
 
 
 def div(event):
     try:
-        num1 = float(ent1.get())
-        num2 = float(ent2.get())
-        l1['text'] = num1/num2
+        digit1 = float(ent1.get())
+        digit2 = float(ent2.get())
+        l1['text'] = digit1 / digit2
     except ValueError:
         l1['text'] = 'Ошибка'
     except ZeroDivisionError:
