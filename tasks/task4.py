@@ -1,7 +1,8 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 
-from tkinter import Tk, END, Text, Entry, Button, filedialog as fd
+from tkinter import Tk, END, Text, Entry, Button
+from tkinter import filedialog as fd
 
 """
 Напишите программу, состоящую из однострочного и многострочного текстовых полей и двух кнопок "Открыть" и "Сохранить". 
