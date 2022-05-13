@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 
-from tkinter import Tk, END, Text, Entry, Button, filedialog
+from tkinter import Tk, END, Text, Entry, Button, filedialog as fd
 
 """
 Напишите программу, состоящую из однострочного и многострочного текстовых полей и двух кнопок "Открыть" и "Сохранить". 
@@ -14,14 +14,14 @@ from tkinter import Tk, END, Text, Entry, Button, filedialog
 
 def opening(event):
     text.delete(1.0, END)
-    name = filedialog.askopenfilename()
+    name = fd.askopenfilename()
     with open(name, 'r', encoding="utf-8") as f:
         data = f.read()
     text.insert(1.0, data)
 
 
 def save(event):
-    save_file = filedialog.asksaveasfilename(defaultextension=".txt", filetypes=(("Текстовый файл", "*.txt"),))
+    save_file = fd.asksaveasfilename(defaultextension=".txt", filetypes=(("Текстовый файл", "*.txt"),))
     data = text.get(1.0, END)
     with open(save_file, 'w', encoding="utf-8") as f:
         f.write(data)
