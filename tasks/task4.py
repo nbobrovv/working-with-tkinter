@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 
-from tkinter import *
+from tkinter import Tk, END, Text, Entry, Button, filedialog
 
 """
 Напишите программу, состоящую из однострочного и многострочного текстовых полей и двух кнопок "Открыть" и "Сохранить". 
@@ -12,22 +12,19 @@ from tkinter import *
 """
 
 
-def save(event):
-    name = ent.get()
-    data = text.get(1.0, END)
-    with open(name, 'w', encoding="utf-8") as f:
-        f.write(data)
-
-
 def opening(event):
-    try:
-        text.delete(1.0, END)
-        name = ent.get()
-        with open(name, 'r', encoding="utf-8") as f:
-            data = f.read()
-        text.insert(1.0, data)
-    except FileNotFoundError:
-        text.insert(1.0, 'Укажите путь к файлу')
+    text.delete(1.0, END)
+    name = filedialog.askopenfilename()
+    with open(name, 'r', encoding="utf-8") as f:
+        data = f.read()
+    text.insert(1.0, data)
+
+
+def save(event):
+    save_file = filedialog.asksaveasfilename(defaultextension=".txt", filetypes=(("Текстовый файл", "*.txt"),))
+    data = text.get(1.0, END)
+    with open(save_file, 'w', encoding="utf-8") as f:
+        f.write(data)
 
 
 if __name__ == '__main__':

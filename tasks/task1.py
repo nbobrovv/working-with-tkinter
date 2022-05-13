@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 
-from tkinter import *
+from tkinter import Label, Entry, Button, Tk
 
 """
 напишите простейший калькулятор, состоящий из двух текстовых полей,

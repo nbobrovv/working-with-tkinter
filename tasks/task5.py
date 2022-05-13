@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 
-from tkinter import *
+from tkinter import Tk, Frame, StringVar, Label, Radiobutton, TOP, LEFT
 
 """
 Напишите программу, в которой имеется несколько объединенных в группу радиокнопок,

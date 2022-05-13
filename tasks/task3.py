@@ -1,11 +1,11 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 
+from tkinter import Tk, END, Label, Button, Entry, LEFT
+
 """
 Перепишите программу task2 так, чтобы интерфейс выглядел иначе.
 """
-
-from tkinter import *
 
 
 def red(event):
@@ -20,7 +20,7 @@ def orange(event):
     ent1.insert(0, "#ff7d00")
 
 
-def yelow(event):
+def yellow(event):
     ent1.delete(0, END)
     l1['text'] = 'Жёлтый'
     ent1.insert(0, "#ffff00")
@@ -63,7 +63,7 @@ if __name__ == '__main__':
     but7 = Button(bg='#7d00ff', width=5, pady=5)
     but1.bind('<Button-1>', red)
     but2.bind('<Button-1>', orange)
-    but3.bind('<Button-1>', yelow)
+    but3.bind('<Button-1>', yellow)
     but4.bind('<Button-1>', green)
     but5.bind('<Button-1>', gol)
     but6.bind('<Button-1>', blue)
